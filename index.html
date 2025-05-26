@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon Inspired Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<script>
+  function searchProduct() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const products = document.querySelectorAll("main .grid > div");
+
+    products.forEach((product) => {
+      const title = product.querySelector("h3").innerText.toLowerCase();
+      if (title.includes(input)) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  }
+</script>
+
+<body class="bg-gray-100 font-sans">
+
+  <!-- Top Navbar -->
+  <header class="bg-yellow-500 p-4 text-white flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+    <h1 class="text-xl font-bold">Amazon-Like Store</h1>
+
+    <!-- Search Section -->
+    <div class="flex w-full sm:w-1/2">
+      <input type="text" placeholder="Search products..." class="flex-grow p-2 rounded-l text-black" id="searchInput" />
+      <button onclick="searchProduct()" class="bg-black px-4 py-2 rounded-r hover:bg-gray-900">Search</button>
+    </div>
+
+    <button class="bg-black px-4 py-2 rounded">Sign In</button>
+  </header>
+
+  <!-- Page Content: Sidebar + Main -->
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="w-60 bg-white p-4 shadow-md hidden md:block">
+      <h2 class="text-lg font-semibold mb-4">Categories</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="text-gray-700 hover:text-yellow-500">Electronics</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-yellow-500">Fashion</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-yellow-500">Home & Kitchen</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-yellow-500">Books</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-yellow-500">Toys</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-yellow-500">Beauty</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+      <h2 class="text-2xl font-semibold mb-4">Recommended Products</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Product 1 -->
+        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+          <img src="https://shopatsc.com/cdn/shop/products/CH520_1000x1000_Blue_G.jpg?v=1681219211" alt="Sony Headphones" class="w-full h-40 object-cover mb-2">
+          <h3 class="text-lg font-semibold">Sony CH520 Headphones</h3>
+          <p class="text-sm text-gray-600">₹4,590</p>
+          <button class="mt-2 bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+          <img src="https://www.wearcomet.com/cdn/shop/files/madagascar-min.jpg?v=1736160716&width=823" alt="Men's Sneaker" class="w-full h-40 object-cover mb-2">
+          <h3 class="text-lg font-semibold">Men's Sneaker</h3>
+          <p class="text-sm text-gray-600">₹1,299</p>
+          <button class="mt-2 bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq7F0sLxKCb6hRIBR8GZPkNEQFRmYL9y-yog&s" alt="Cookware Set" class="w-full h-40 object-cover mb-2">
+          <h3 class="text-lg font-semibold">Cookware Set</h3>
+          <p class="text-sm text-gray-600">₹3,299</p>
+          <button class="mt-2 bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600">Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5RgJbOCcLAv9zrv3u5qiSh_1bFWtelt73Xw&s" alt="Novel" class="w-full h-40 object-cover mb-2">
+          <h3 class="text-lg font-semibold">Novel</h3>
+          <p class="text-sm text-gray-600">₹399</p>
+          <button class="mt-2 bg-yellow-500 text-white px-4 py-1 rounded hover:bg-yellow-600">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Sponsored Section -->
+      <section class="mt-10">
+        <h2 class="text-2xl font-semibold mb-4">Sponsored</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Sponsored 1 -->
+          <div class="bg-yellow-50 p-4 rounded shadow hover:shadow-lg transition border border-yellow-400">
+            <img src="https://m.media-amazon.com/images/I/71d5fMDvqGL._AC_UY218_.jpg" alt="Samsung Galaxy" class="w-full h-40 object-cover mb-2">
+            <h3 class="text-lg font-semibold">Samsung Galaxy M14 5G</h3>
+            <p class="text-sm text-gray-600">Sponsored · ₹12,999</p>
+          </div>
+
+          <!-- Sponsored 2 -->
+          <div class="bg-yellow-50 p-4 rounded shadow hover:shadow-lg transition border border-yellow-400">
+            <img src="https://m.media-amazon.com/images/I/61v2-68gQ2L._AC_UL320_.jpg" alt="Smartwatch" class="w-full h-40 object-cover mb-2">
+            <h3 class="text-lg font-semibold">Noise ColorFit Smartwatch</h3>
+            <p class="text-sm text-gray-600">Sponsored · ₹1,499</p>
+          </div>
+
+          <!-- Sponsored 3 -->
+          <div class="bg-yellow-50 p-4 rounded shadow hover:shadow-lg transition border border-yellow-400">
+            <img src="https://m.media-amazon.com/images/I/61hYVvg3TRL._AC_UL320_.jpg" alt="Face Cream" class="w-full h-40 object-cover mb-2">
+            <h3 class="text-lg font-semibold">Pond's Bright Beauty Cream</h3>
+            <p class="text-sm text-gray-600">Sponsored · ₹199</p>
+          </div>
+
+          <!-- Sponsored 4 -->
+          <div class="bg-yellow-50 p-4 rounded shadow hover:shadow-lg transition border border-yellow-400">
+            <img src="https://m.media-amazon.com/images/I/71E5zB1qbIL._AC_UL320_.jpg" alt="Washing Machine" class="w-full h-40 object-cover mb-2">
+            <h3 class="text-lg font-semibold">LG Washing Machine</h3>
+            <p class="text-sm text-gray-600">Sponsored · ₹24,990</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+    &copy; 2025 Amazon Inspired UI Samruddhi. All rights reserved.
+  </footer>
+
+</body>
+</html>
